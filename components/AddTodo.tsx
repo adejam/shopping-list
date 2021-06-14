@@ -20,7 +20,14 @@ const AddTodo: React.FunctionComponent<AddTodoProps> = ({ handleSubmit }) => {
                 onChangeText={changeHandler}
                 value={text}
             />
-            <Button color="coral" onPress={() => handleSubmit(text)} title="Add Item" />
+            <Button
+                color="coral"
+                onPress={() => {
+                    handleSubmit(text);
+                    setText('');
+                }}
+                title="Add Item"
+            />
         </View>
     );
 };
